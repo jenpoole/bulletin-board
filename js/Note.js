@@ -49,5 +49,26 @@ var Note = React.createClass({
     }    
 });
 
-React.render(<Note>Hello World</Note>, 
+
+// Create board for notes
+var Board = React.createClass({
+    // validate number of notes on board
+    propTypes: {
+        count: function(props, propName) {
+            if (typeof props[propName] !== "number"){
+                return new Error('The count property must be a number');
+            }
+            if (props[propName] > 100){
+                return new Error("Creating " + props[propName] + " notes is excessive!");
+            }
+        }
+    },
+    
+    render: function() {
+        return <div className="board">{this.props.count}</div>
+    }
+});
+
+// render board with 10 notes
+React.render(<Board count={10}/>, 
     document.getElementById('react-container'));
