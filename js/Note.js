@@ -11,6 +11,10 @@ var Note = React.createClass({
             transform: 'rotate(' + this.randomBetween(-15, 15) + 'deg)'
         };
     },
+    // drag note around board
+    componentDidMount: function() {
+        $(this.getDOMNode()).draggable();
+    },
     // generate unique key for each note
     randomBetween: function(min, max) {
         return (min + Math.ceil(Math.random() * max));
@@ -85,6 +89,13 @@ var Board = React.createClass({
         this.uniqueId = this.uniqueId || 0;
         return this.uniqueId++;
     },
+    // preload board with ipsum notes, by loading JSON
+    // componentWillMount: function() {
+    //     var self = this;
+    //     if(this.props.count) {
+    //         $.getJSON(some ipsum text?);
+    //     }
+    // },
     // add new notes to board
     add: function(text) {
         var arr = this.state.notes;
@@ -120,7 +131,7 @@ var Board = React.createClass({
     render: function() {
         return (<div className="board">
             {this.state.notes.map(this.eachNote)}
-            <button onClick={this.add.bind(null, "New Note")} className="btn btn-sm btn-success glyphicon glyphicon-plus"><span>New note</span></button>
+            <button onClick={this.add.bind(null, "New Note")} className="btn btn-sm btn-success glyphicon glyphicon-plus addNewBtn"><span>New note</span></button>
         </div>);
     }
 });

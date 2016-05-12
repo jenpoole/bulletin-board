@@ -12,16 +12,10 @@ body {
 }
 
 div.board {
-    background-color: brown;
     width: 100%;
-    background: #eab92d;
-    background: -moz-radial-gradient(center, ellipse cover, #eab92d 57%, #c79810 99%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(57%, #eab92d), color-stop(99%, #c79810));
-    background: -webkit-radial-gradient(center, ellipse cover, #eab92d 57%, #c79810 99%);
-    background: -o-radial-gradient(center, ellipse cover, #eab92d 57%, #c79810 99%);
-    background: -ms-radial-gradient(center, ellipse cover, #eab92d 57%, #c79810 99%);
-    background: radial-gradient(ellipse at center, #eab92d 57%, #c79810 99%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eab92d', endColorstr='#c79810', GradientType=1);
+    background: url("texture.jpg") center center #444;
+    background-size: cover;
+    background-blend-mode: multiply;
 
 }
 
@@ -29,6 +23,7 @@ div.note {
     height: 150px;
     width: 150px;
     background-color: yellow;
+    background-color: #eab92d;
     margin: 2px 0;
     position: absolute;
     cursor: -webkit-grab;
@@ -65,6 +60,7 @@ div.note button {
 div.note > textarea {
     height: 75%;
     background: rgba(255, 255, 255, .5);
+    resize: none;
 }
 
 .glyphicon-plus {
@@ -78,4 +74,19 @@ div.note > textarea {
     padding-left: 10px;
 }
 
+.addNewBtn {
+    right: 50px;
+}
+
+.navbar-inverse {
+    margin-bottom: 0;
+    border-radius: 0;
+    background-color: #111;
+}
+
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-brand:focus, 
+.navbar-inverse .navbar-brand:hover {
+    color: #eab92d;
+}
 
