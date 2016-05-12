@@ -65,12 +65,14 @@ var Board = React.createClass({
     // make Board a parent component of notes 
     getInitialState: function() {
         return {
-            notes: [
-                'call bill',
-                'email lisa',
-                'bake a cake'
-            ]
+            notes: []
         };
+    },
+    // add new notes to board
+    add: function(text) {
+        var arr = this.state.notes;
+        arr.push(text);
+        this.setState({notes:arr});
     },
     // update state of notes array
     update: function(newText, i) {
@@ -98,6 +100,7 @@ var Board = React.createClass({
     render: function() {
         return (<div className="board">
             {this.state.notes.map(this.eachNote)}
+            <button onClick={this.add.bind(null, "New Note")} className="btn btn-sm btn-success glyphicon glyphicon-plus"><span>New note</span></button>
         </div>);
     }
 });

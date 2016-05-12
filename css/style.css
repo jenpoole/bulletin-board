@@ -73,3 +73,9 @@ div.note > textarea {
     right: 10px;
 }
 
+.glyphicon-plus span {
+    font-family: sans-serif;
+    padding-left: 10px;
+}
+
+
