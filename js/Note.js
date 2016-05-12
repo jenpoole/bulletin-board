@@ -136,6 +136,6 @@ var Board = React.createClass({
     }
 });
 
-// render board with 10 notes
+// render board
 React.render(<Board count={10}/>, 
     document.getElementById('react-container'));
