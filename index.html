@@ -25,7 +25,7 @@
     <link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse" data-toggle="tooltip" data-placement="bottom" title="Create, edit and delete notes; click note and drag to change its position.">
         <div class="container-fluid">
             <div class="navbar-header">
                 <div class="navbar-brand">Bulletin Board</div>
@@ -36,6 +36,11 @@
     
     <div id="react-container"></div>
     <script src="js/Note.js" type="text/babel" ></script>
+    <script>
+        $(function() {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
 </body>
 </html>
 
